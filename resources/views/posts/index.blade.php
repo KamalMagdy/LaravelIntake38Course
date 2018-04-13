@@ -2,6 +2,7 @@
 
 
 @section('content')
+<div class="container" >
 <center>
  <a class="btn btn-success" href="posts/create">Create Post</a>
 </center>
@@ -30,7 +31,7 @@
       <td>{{$post->user->name}}</td>
       <td>{{$post->created_at->todatestring()}}</td>
       <td>
-      <a class="btn btn-info" href="posts/create">view</a>
+      <a class="btn btn-info" href="posts/show/{{ $post->id }}">view</a>
       <a class="btn btn-primary" href="posts/create">edit</a>
       <a class="btn btn-danger" href="posts/create">delete</a>
       </td>
@@ -40,5 +41,5 @@
 
 @endforeach
 </table>
-
+</div>
 @endsection

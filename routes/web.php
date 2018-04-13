@@ -21,3 +21,4 @@ Route::get(
 )->name('posts.index');
 Route::get('posts/create','PostsController@create');
 Route::post('posts','PostsController@store');
+Route::get('posts/show/{id}','PostsController@show');

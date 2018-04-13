@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Post;
 use Illuminate\Http\Request;
 use App\User;
+use Eloquent\Builder;
+
 
 class PostsController extends Controller
 {
@@ -39,4 +41,14 @@ class PostsController extends Controller
         
        return redirect(route('posts.index')); 
     }
+    public function show($id)
+    {
+        $posts = Post::all();
+        $post = Post::findOrFail($id);
+
+        return view('posts.show',[
+            'post' => $post
+        ]);  
+      }
+
 }
