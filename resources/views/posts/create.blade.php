@@ -2,14 +2,14 @@
 
 
 @section('content')
-
+<div class="container">
 <form method="post" action="/posts">
-{{csrf_field()}}
-Title :- <input type="text" name="title">
-<br><br>
-Description :- 
-<textarea name="description"></textarea>
+@csrf
+<label for="formGroupExampleInput">Title</label>
+<input type="text" class="form-control" id="formGroupExampleInput" name="title">
 <br>
+<label for="formGroupExampleInput" >Description</label>
+<textarea name="description" class="form-control" id="formGroupExampleInput"></textarea>
 <br>
 Post Creator
 <select class="form-control" name="user_id">
@@ -19,7 +19,7 @@ Post Creator
 
 </select>
 <br>
-<input type="submit" value="Submit" class="btn btn-primary">
+<input type="submit" value="create" class="btn btn-success">
 </form>
-
+</div>
 @endsection
