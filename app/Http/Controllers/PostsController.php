@@ -70,7 +70,7 @@ class PostsController extends Controller
         $fields = array(
             'title' => 'required',
             'description' => 'required',
-            'user_id' => $request->user_id
+            'user_id' => 'exist:users'
         );
         $post = $request->all();
         Post::findOrFail($id)->update($post);

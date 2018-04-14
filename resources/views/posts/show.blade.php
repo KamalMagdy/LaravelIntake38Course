@@ -22,7 +22,7 @@ Post Creator Info
     <div class="container">
     <b style="display: inline">Name:-</b> {{ $post->user->name }}<br>
     <b style="display: inline">Email:-</b> {{ $post->user->email }}<br>
-    <b style="display: inline">Created At:-</b> {{ $post->created_at }}
+    <b style="display: inline">Created At:-</b> {{ $post->created_at->format('l jS \of F Y h:i:s A') }}
     </div>
 
 </div>
