@@ -15,6 +15,8 @@ class AddUserIdToPostsTable extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
             $table->integer('user_id')->nullable();
+            $table->string('slug')->nullable();
+
         });
     }
 

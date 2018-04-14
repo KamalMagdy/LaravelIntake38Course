@@ -20,7 +20,7 @@ Route::get(
     'posts',
     'PostsController@index'
 )->name('posts.index')->middleware('auth');
-Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => ['auth']], function () {
     Route::get('posts/create','PostsController@create');
 Route::post('posts','PostsController@store');
 Route::get('posts/show/{id}','PostsController@show');

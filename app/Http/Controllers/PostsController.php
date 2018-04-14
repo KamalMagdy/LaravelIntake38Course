@@ -8,6 +8,7 @@ use App\User;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 
 class PostsController extends Controller
 {
@@ -70,7 +71,7 @@ class PostsController extends Controller
         $fields = array(
             'title' => 'required',
             'description' => 'required',
-            'user_id' => 'exist:users'
+            'user_id' => $request->user_id
         );
         $post = $request->all();
         Post::findOrFail($id)->update($post);
@@ -85,3 +86,4 @@ class PostsController extends Controller
         return redirect(route('posts.index'));
     }
 }
+
