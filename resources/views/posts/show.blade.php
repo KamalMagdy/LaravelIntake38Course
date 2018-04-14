@@ -12,6 +12,7 @@ Post Info
     <b style="display: inline">Description:-</b><br> {{ $post->description }}
     </div>
 </div>
+<br><br>
 
 <div class="card-header">
 Post Creator Info

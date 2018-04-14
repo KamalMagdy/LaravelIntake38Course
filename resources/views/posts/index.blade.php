@@ -32,7 +32,7 @@
       <td>{{$post->created_at->todatestring()}}</td>
       <td>
       <a class="btn btn-info" href="posts/show/{{ $post->id }}">view</a>
-      <a class="btn btn-primary" href="posts/create">edit</a>
+      <a class="btn btn-primary" href="posts/edit/{{ $post->id }}">edit</a>
       <a class="btn btn-danger" href="posts/create">delete</a>
       </td>
 

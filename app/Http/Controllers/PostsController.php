@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Post;
 use Illuminate\Http\Request;
 use App\User;
-use Eloquent\Builder;
 
 
 class PostsController extends Controller
@@ -51,4 +50,28 @@ class PostsController extends Controller
         ]);  
       }
 
+      public function edit($id){
+
+        $users = User::all();
+        $post = Post::findOrFail($id);
+        return view('posts.edit', [
+            'post' => $post
+            ] , [
+                'users' => $users
+
+            ]);
+    }
+    
+    public function update($id, Request $request){
+
+        $fields = array(
+            'title' => 'required',
+            'description' => 'required',
+            'user_id' => $request->user_id
+        );
+        $post = $request->all();
+        Post::findOrFail($id)->update($post);
+
+        return redirect()->route('posts.index');
+    }
 }
