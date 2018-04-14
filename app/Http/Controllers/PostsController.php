@@ -11,8 +11,9 @@ class PostsController extends Controller
 {
     public function index()
     {
-        $posts = Post::all();
-        $post = $posts->first();
+        $posts = Post::paginate(3);
+        // $posts = Post::all();
+        // $post = $posts->first();
 
         return view('posts.index',[
 
@@ -73,5 +74,12 @@ class PostsController extends Controller
         Post::findOrFail($id)->update($post);
 
         return redirect()->route('posts.index');
+    }
+
+    public function destroy($id)
+    {
+        $post = Post::findOrFail($id);
+        $post->delete();
+        return redirect(route('posts.index'));
     }
 }

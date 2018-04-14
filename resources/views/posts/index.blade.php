@@ -33,7 +33,7 @@
       <td>
       <a class="btn btn-info" href="posts/show/{{ $post->id }}">view</a>
       <a class="btn btn-primary" href="posts/edit/{{ $post->id }}">edit</a>
-      <a class="btn btn-danger" href="posts/create">delete</a>
+      <a class="btn btn-danger" href="posts/delete/{{ $post->id }}">delete</a>
       </td>
 
     </tr>
@@ -41,5 +41,6 @@
 
 @endforeach
 </table>
++    {{ $posts->links('paginator') }} 
 </div>
 @endsection
