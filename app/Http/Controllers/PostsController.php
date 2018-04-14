@@ -6,7 +6,7 @@ use App\Post;
 use Illuminate\Http\Request;
 use App\User;
 use App\Http\Requests\StorePostRequest;
-
+use App\Http\Requests\UpdatePostRequest;
 
 
 class PostsController extends Controller
@@ -65,7 +65,7 @@ class PostsController extends Controller
             ]);
     }
     
-    public function update($id, Request $request){
+    public function update($id, UpdatePostRequest $request){
 
         $fields = array(
             'title' => 'required',

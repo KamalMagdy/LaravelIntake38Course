@@ -31,11 +31,16 @@
       <td>{{$post->user->name}}</td>
       <td>{{$post->created_at->todatestring()}}</td>
       <td>
+      <div style="display:inline">
       <a class="btn btn-info" href="posts/show/{{ $post->id }}">view</a>
       <a class="btn btn-primary" href="posts/edit/{{ $post->id }}">edit</a>
-      <a class="btn btn-danger" href="posts/delete/{{ $post->id }}">delete</a>
+      <form method="post" action="posts/delete/{{ $post->id }}">
+      @csrf
+      {{ method_field('DELETE') }}
+      <button class="btn btn-danger" >delete</button>
+      </form>
       </td>
-
+</div>
     </tr>
   </tbody>
 
