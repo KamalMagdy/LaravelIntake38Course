@@ -68,11 +68,7 @@ class PostsController extends Controller
     
     public function update($id, UpdatePostRequest $request){
 
-        $fields = array(
-            'title' => 'required',
-            'description' => 'required',
-            'user_id' => $request->user_id
-        );
+ 
         $post = $request->all();
         Post::findOrFail($id)->update($post);
 

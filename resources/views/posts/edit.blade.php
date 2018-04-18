@@ -25,7 +25,7 @@
 Post Creator
 <select class="form-control" name="user_id">
 @foreach ($users as $user)
-    <option value="{{$user->id}}">{{$user->name}}</option>
+<option @if($user->id == $post->user->id) selected @endif value="{{$user->id}}">{{$user->name}}</option>
 @endforeach
 
 </select>

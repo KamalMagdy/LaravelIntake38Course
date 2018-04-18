@@ -18,6 +18,12 @@ class AddUserIdToPostsTable extends Migration
             $table->string('slug')->nullable();
 
         });
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('provider_id');
+            $table->string('provider'); 
+            $table->string('password')->nullable()->change();
+            $table->string('email')->nullable()->change(); 
+        });
     }
 
     /**
